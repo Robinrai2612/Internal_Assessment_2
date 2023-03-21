@@ -1,0 +1,10 @@
+<input
+  type="text"
+  placeholder="Search"
+  [(ngModel)]="searchTerm"
+  (ngModelChange)="search($event)"
+  class="search-input"
+/>
+
+<button class="search-button" (click)="search(searchTerm)">Search</button>
+{{ books | json }}

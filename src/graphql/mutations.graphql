@@ -1,0 +1,157 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateBook(
+  $input: CreateBookInput!
+  $condition: ModelBookConditionInput
+) {
+  createBook(input: $input, condition: $condition) {
+    isbn
+    title
+    author
+    published_year
+    publisher
+    reviews {
+      items {
+        id
+        reviewer_name
+        comment
+        createdAt
+        updatedAt
+        bookReviewsId
+      }
+      nextToken
+    }
+    id
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateBook(
+  $input: UpdateBookInput!
+  $condition: ModelBookConditionInput
+) {
+  updateBook(input: $input, condition: $condition) {
+    isbn
+    title
+    author
+    published_year
+    publisher
+    reviews {
+      items {
+        id
+        reviewer_name
+        comment
+        createdAt
+        updatedAt
+        bookReviewsId
+      }
+      nextToken
+    }
+    id
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteBook(
+  $input: DeleteBookInput!
+  $condition: ModelBookConditionInput
+) {
+  deleteBook(input: $input, condition: $condition) {
+    isbn
+    title
+    author
+    published_year
+    publisher
+    reviews {
+      items {
+        id
+        reviewer_name
+        comment
+        createdAt
+        updatedAt
+        bookReviewsId
+      }
+      nextToken
+    }
+    id
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateReview(
+  $input: CreateReviewInput!
+  $condition: ModelReviewConditionInput
+) {
+  createReview(input: $input, condition: $condition) {
+    id
+    book {
+      isbn
+      title
+      author
+      published_year
+      publisher
+      reviews {
+        nextToken
+      }
+      id
+      createdAt
+      updatedAt
+    }
+    reviewer_name
+    comment
+    createdAt
+    updatedAt
+    bookReviewsId
+  }
+}
+mutation UpdateReview(
+  $input: UpdateReviewInput!
+  $condition: ModelReviewConditionInput
+) {
+  updateReview(input: $input, condition: $condition) {
+    id
+    book {
+      isbn
+      title
+      author
+      published_year
+      publisher
+      reviews {
+        nextToken
+      }
+      id
+      createdAt
+      updatedAt
+    }
+    reviewer_name
+    comment
+    createdAt
+    updatedAt
+    bookReviewsId
+  }
+}
+mutation DeleteReview(
+  $input: DeleteReviewInput!
+  $condition: ModelReviewConditionInput
+) {
+  deleteReview(input: $input, condition: $condition) {
+    id
+    book {
+      isbn
+      title
+      author
+      published_year
+      publisher
+      reviews {
+        nextToken
+      }
+      id
+      createdAt
+      updatedAt
+    }
+    reviewer_name
+    comment
+    createdAt
+    updatedAt
+    bookReviewsId
+  }
+}

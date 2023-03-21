@@ -1,0 +1,142 @@
+query SearchBooks(
+  $filter: SearchableBookFilterInput
+  $sort: [SearchableBookSortInput]
+  $limit: Int
+  $nextToken: String
+  $from: Int
+  $aggregates: [SearchableBookAggregationInput]
+) {
+  searchBooks(
+    filter: $filter
+    sort: $sort
+    limit: $limit
+    nextToken: $nextToken
+    from: $from
+    aggregates: $aggregates
+  ) {
+    items {
+      isbn
+      title
+      author
+      published_year
+      publisher
+      reviews {
+        nextToken
+      }
+      id
+      createdAt
+      updatedAt
+    }
+    nextToken
+    total
+    aggregateItems {
+      name
+      result {
+        ... on SearchableAggregateScalarResult {
+          value
+        }
+        ... on SearchableAggregateBucketResult {
+          buckets {
+            key
+            doc_count
+          }
+        }
+      }
+    }
+  }
+}
+query GetBook($id: ID!) {
+  getBook(id: $id) {
+    isbn
+    title
+    author
+    published_year
+    publisher
+    reviews {
+      items {
+        id
+        reviewer_name
+        comment
+        createdAt
+        updatedAt
+        bookReviewsId
+      }
+      nextToken
+    }
+    id
+    createdAt
+    updatedAt
+  }
+}
+query ListBooks(
+  $filter: ModelBookFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listBooks(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      isbn
+      title
+      author
+      published_year
+      publisher
+      reviews {
+        nextToken
+      }
+      id
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetReview($id: ID!) {
+  getReview(id: $id) {
+    id
+    book {
+      isbn
+      title
+      author
+      published_year
+      publisher
+      reviews {
+        nextToken
+      }
+      id
+      createdAt
+      updatedAt
+    }
+    reviewer_name
+    comment
+    createdAt
+    updatedAt
+    bookReviewsId
+  }
+}
+query ListReviews(
+  $filter: ModelReviewFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listReviews(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      book {
+        isbn
+        title
+        author
+        published_year
+        publisher
+        id
+        createdAt
+        updatedAt
+      }
+      reviewer_name
+      comment
+      createdAt
+      updatedAt
+      bookReviewsId
+    }
+    nextToken
+  }
+}

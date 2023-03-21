@@ -1,0 +1,23 @@
+<div class="container" [formGroup]="bookForm">
+  <label for="isbn">Isbn:</label>
+  <input type="text" id="isbn" formControlName="isbn" required />
+
+  <label for="title">Title:</label>
+  <input type="text" id="title" formControlName="title" required />
+
+  <label for="author">Author:</label>
+  <input type="text" id="author" formControlName="author" required />
+
+  <label for="published_year">Published Year:</label>
+  <input
+    type="number"
+    id="published_year"
+    formControlName="published_year"
+    required
+  />
+
+  <label for="publisher">Publisher:</label>
+  <input type="text" id="publisher" formControlName="publisher" required />
+
+  <button type="submit" (click)="updateBook()">Update Book</button>
+</div>

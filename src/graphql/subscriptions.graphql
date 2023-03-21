@@ -1,0 +1,139 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateBook($filter: ModelSubscriptionBookFilterInput) {
+  onCreateBook(filter: $filter) {
+    isbn
+    title
+    author
+    published_year
+    publisher
+    reviews {
+      items {
+        id
+        reviewer_name
+        comment
+        createdAt
+        updatedAt
+        bookReviewsId
+      }
+      nextToken
+    }
+    id
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateBook($filter: ModelSubscriptionBookFilterInput) {
+  onUpdateBook(filter: $filter) {
+    isbn
+    title
+    author
+    published_year
+    publisher
+    reviews {
+      items {
+        id
+        reviewer_name
+        comment
+        createdAt
+        updatedAt
+        bookReviewsId
+      }
+      nextToken
+    }
+    id
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteBook($filter: ModelSubscriptionBookFilterInput) {
+  onDeleteBook(filter: $filter) {
+    isbn
+    title
+    author
+    published_year
+    publisher
+    reviews {
+      items {
+        id
+        reviewer_name
+        comment
+        createdAt
+        updatedAt
+        bookReviewsId
+      }
+      nextToken
+    }
+    id
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateReview($filter: ModelSubscriptionReviewFilterInput) {
+  onCreateReview(filter: $filter) {
+    id
+    book {
+      isbn
+      title
+      author
+      published_year
+      publisher
+      reviews {
+        nextToken
+      }
+      id
+      createdAt
+      updatedAt
+    }
+    reviewer_name
+    comment
+    createdAt
+    updatedAt
+    bookReviewsId
+  }
+}
+subscription OnUpdateReview($filter: ModelSubscriptionReviewFilterInput) {
+  onUpdateReview(filter: $filter) {
+    id
+    book {
+      isbn
+      title
+      author
+      published_year
+      publisher
+      reviews {
+        nextToken
+      }
+      id
+      createdAt
+      updatedAt
+    }
+    reviewer_name
+    comment
+    createdAt
+    updatedAt
+    bookReviewsId
+  }
+}
+subscription OnDeleteReview($filter: ModelSubscriptionReviewFilterInput) {
+  onDeleteReview(filter: $filter) {
+    id
+    book {
+      isbn
+      title
+      author
+      published_year
+      publisher
+      reviews {
+        nextToken
+      }
+      id
+      createdAt
+      updatedAt
+    }
+    reviewer_name
+    comment
+    createdAt
+    updatedAt
+    bookReviewsId
+  }
+}
